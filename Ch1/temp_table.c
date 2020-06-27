@@ -11,6 +11,8 @@ main()
 	upper = 300;  /* upper limit of temp table */
 	step = 20;    /* step size */
 
+	printf("ºF\tºC\n");
+	printf("__________\n");
 	fahr = lower;
 	while (fahr <= upper)
 	{
