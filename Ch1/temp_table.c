@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+int fToC(int temp);
+int cToF(int temp);
+
 /* print Fahrenheit-Celsius table
    for fahr = 0, 20, ..., 300 */
 main()
@@ -16,7 +19,7 @@ main()
 	fahr = lower;
 	while (fahr <= upper)
 	{
-		celsius = (5.0/9.0) * (fahr-32.0);
+		celsius = fToC(fahr);
 		printf("%3.0f %6.1f\n", fahr, celsius);
 		fahr += step;
 	}
@@ -26,8 +29,20 @@ main()
 	celsius = lower;
 	while (celsius <= upper)
 	{
-		fahr = (9.0/5.0) * celsius + 32;
+		fahr = cToF(celsius);
 		printf("%3.0f %6.1f\n", celsius, fahr);
 		celsius += step;
 	}
+}
+
+/* fToC: converts Fahrenheit to Celsius */
+int fToC(int temp)
+{
+	return (5.0/9.0) * (temp - 32.0);
+}
+
+/* cToF: converts Celsius to Fahrenheit */
+int cToF(int temp)
+{
+	return (9.0/5.0) * temp + 32;
 }
